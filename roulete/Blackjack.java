@@ -1,3 +1,6 @@
+// 2 º Semestre Trabalho 1
+// Henrique Figueiredo
+
 package roulete;
 import java.util.*;
 import java.util.Random;
