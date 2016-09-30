@@ -1,3 +1,5 @@
+// 2 º Semestre 2016 Trabalho 1
+// Henrique Figueiredo
 package roulete;
 import java.util.*;
 import java.awt.*;
@@ -5,6 +7,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.*;
 
+// classe com a imagem e informação de uma carta de um baralho normal de cartas
 public class Card
 {
     private short rank, suit;
@@ -35,7 +38,7 @@ public class Card
     {
           return ranks[rank] + " of " + suits[suit];
     }
-
+    //retorna o numero da carta
     public short getRank() {
          return rank;
     }
