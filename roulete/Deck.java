@@ -1,3 +1,5 @@
+// 2 º Semestre 2016 Trabalho 1
+// Henrique Figueiredo
 package roulete;
 import java.awt.EventQueue;
 import javax.swing.JFrame;
@@ -6,6 +8,7 @@ import java.util.Random;
 import java.util.ArrayList;
 import java.awt.event.KeyEvent;
 
+// classe que cria um baralho de cartas e o baralha
 public class Deck {
 	private ArrayList<Card> cards;
 	public Card teste;
@@ -23,7 +26,8 @@ public class Deck {
 			 }
 		}
 		int size = cards.size() -1;
-
+		
+		// baralhar cartas
 		for (short i=0; i<100; i++)
 		{
 			index_1 = generator.nextInt( size );
@@ -34,11 +38,12 @@ public class Deck {
 			cards.set( index_1, temp );
 		}
 	}
+	// tirar carta do baralho
 	public Card drawFromDeck()
 	{	   
 		return cards.remove( cards.size()-2 );
 	}
-
+	// retorna tamanho do baralho
 	public int getTotalCards()
 	{
 		return cards.size(); 
