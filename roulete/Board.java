@@ -1,4 +1,5 @@
-
+// 2 º Semestre 2016 Trabalho 1
+// Henrique Figueiredo
 package roulete;
 
 import java.awt.*;
@@ -11,6 +12,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 
+// classe que implementa painel onde a bola da roleta vai rodar
 public class Board extends JPanel implements ActionListener{
 
 	private java.awt.Color color = Color.BLUE;   // The color of the ball
@@ -26,6 +28,7 @@ public class Board extends JPanel implements ActionListener{
 
   public Board() {
     }
+	// desenha o circulo da roleta
   public void paintBoard(Graphics2D g2D)
   {
   	g2D.setColor(Color.BLACK);
@@ -51,6 +54,7 @@ public class Board extends JPanel implements ActionListener{
     g2D.setColor(new Color(102,51,0));
     g2D.fillOval (375-10, 77-10, 20, 20);
   }
+	// pinta a bola que vai rodar
   public void paintBall(Graphics2D g2D,Color c)
   {
   //	g2D.setColor(c);
@@ -69,6 +73,7 @@ public class Board extends JPanel implements ActionListener{
 
             super.paintComponent(g);
             try {                
+		// carrega imagem de fundo da roleta
               image = ImageIO.read(new File("./img/roul/board.png"));
               g.drawImage(image, 300, 0, null);
            } catch (IOException ex) {
@@ -89,6 +94,7 @@ public class Board extends JPanel implements ActionListener{
              		}
 
             	}
+	// metodo que incia timer que roda a bola "rand" vezes
   public void Bolarodando(int rand)
   {
   		tim=rand;
