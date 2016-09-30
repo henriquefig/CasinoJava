@@ -1,3 +1,5 @@
+// 2º Semestre 2016 Trabalho 1
+// Henrique Figueiredo
 package roulete;
 import java.util.*;
 import java.util.Random;
@@ -5,7 +7,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-
+// esta classe é um menu para a escolha de cada jogo
 public class Casino extends JFrame{
 
   private static int saldo=1000,score=0,bet=5,odds=0;
@@ -36,7 +38,7 @@ public class Casino extends JFrame{
     aux.add(black);
     button2.add(aux);
    
-
+    // Criação de cada botão de escolha de jogo
     for(int i=1;i<=3;i++)
     {
     
