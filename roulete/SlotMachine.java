@@ -1,9 +1,12 @@
+// 2º Semestre 2016 Trabalho 1
+// Henrique Figueiredo
 package roulete;
 import java.util.Random;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
+// classe do jogo da SlotMachine
 public class SlotMachine extends JFrame {
    User player=new User();
    Header cabecalho=new Header(player);
@@ -35,6 +38,7 @@ public class SlotMachine extends JFrame {
     dois.linha.get(0).imgcard.setVisible(false);
     tres.linha.get(0).imgcard.setVisible(false);
 
+     // criar alavanca para começar jogo
     Icon inleaver=new ImageIcon("./img/slot/alav3.png");
     inliber = new JLabel(inleaver);
     Icon precario=new ImageIcon("./img/slot/precario.png");
@@ -52,6 +56,7 @@ public class SlotMachine extends JFrame {
     alavanc.add(liber); 
     alavanc.addMouseListener(new MouseAdapter() { 
     public void mouseClicked(MouseEvent e){
+               // caso a alavanca seja permida e o utilizador tenha saldo começa o Timer de acordo com 3 números random
               if(player.getSaldo() > 0 && player.getBet() > 0 && flagstop==1)
               {
                 alavanc.remove(liber); 
@@ -93,6 +98,7 @@ public class SlotMachine extends JFrame {
 
 
     }
+   // classe que implementa o Timer que move os paineis atraves da classe movingPanel
     public class Flipping implements ActionListener { 
       public void actionPerformed(ActionEvent e) 
       {
@@ -113,6 +119,7 @@ public class SlotMachine extends JFrame {
         }
       }
     }
+   // classe que implementa a mudança de cada painel através do CardLayout
   public class movingPanel
   {
      movingPanel(SlotLinha a,int i)
@@ -146,6 +153,7 @@ public class SlotMachine extends JFrame {
         }
       }
   }
+   // método que retorna os ganhos no final de uma jogada
   public int getWinning() {
       int a=-1,b=0,cont=0,c=0,d=0;
       cont=value/316;
