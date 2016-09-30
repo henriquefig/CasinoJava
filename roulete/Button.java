@@ -1,3 +1,5 @@
+// 2 º Semestre 2016 Trabalho 1
+// Henrique Figueiredo
 package roulete;
 
 import java.util.*;
@@ -10,11 +12,13 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 
+// classe que implementa os botoes de aposta para a roleta
 public class Button extends JPanel {
   private int first=0;
   private JPanel button = new JPanel(new GridLayout(1,1));
   private String a= new String();
   private static int kind=-1;
+  //carregar imagem de acordo com o tipo de botao
   public Button(int i, int j,int b) {
     if(b==2)
     a = new String("./img/roul/"+i+j+"g.png");
@@ -28,6 +32,7 @@ public class Button extends JPanel {
 
     JLabel label = new JLabel(image);
     label.setBorder(BorderFactory.createLineBorder(Color.BLACK,2)); 
+    // selecionador de aposta (fica rodeado a vermelho)
     label.addMouseListener(new MouseAdapter() { 
     public void mouseClicked(MouseEvent e){
             
@@ -59,14 +64,17 @@ public class Button extends JPanel {
     button.add(label);
 
   }
+  // retorna o botao
   public JPanel getButton()
   {
     return  button;
   }
+  // retorna o tipo de botao
    public static int getKind()
   { 
     return  kind;
   }
+  // retorna o valor do multiplicador de aposta para esse botão
   public static int getBettingmult(int kind)
   {
     int value=0;
