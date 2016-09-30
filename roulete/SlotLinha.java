@@ -1,8 +1,11 @@
+// 2º Semestre 2016 Trabalho 1
+// Henrique Figueiredo
 package roulete;
 import java.util.*;
 import java.awt.*;
 import javax.swing.*;
 
+// classe que implementa cada linha da slot machine (3 linhas)
 public class SlotLinha extends JPanel
 {
     ArrayList<SlotChoice> linha;
@@ -16,6 +19,8 @@ public class SlotLinha extends JPanel
         SlotChoice temp;
         setLayout(new CardLayout());
         linha = new ArrayList<SlotChoice>();
+        //cerca de 300+ imagens em cada linha
+        // cada quadradinho tem certa probabilidade de se repetir
        for(int j=0;j<=127;j++)
         {
             if(j==0)
