@@ -1,3 +1,5 @@
+// 2º Semestre 2016 Trabalho 1
+// Henrique Figueiredo
 package roulete;
 import java.util.*;
 import java.awt.*;
@@ -5,6 +7,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.*;
 
+//classe que implementa cada quadradinho da slot machine
 public class SlotChoice
 {
     private short rank;
@@ -34,7 +37,7 @@ public class SlotChoice
     {
           return ranks[rank];
     }
-
+    // funçao que retorna o tipo do quadradinho
     public short getRank() {
          return rank;
     }
