@@ -1,3 +1,5 @@
+// 2º Semestre 2016 Trabalho 1
+// Henrique Figueiredo
 package roulete;
 import java.util.*;
 import java.util.Random;
@@ -5,7 +7,9 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
+// esta é a classe principal do jogo da roleta
 public class Roleta extends JFrame {
+	//prearar botões, texto e variaveis a utilizar
   private int first=0;
   private int sortudo=0;
   private int sortudo1=0;
@@ -27,6 +31,7 @@ public class Roleta extends JFrame {
     Board numerosort = new Board();
 	Button button1[]=new Button[40];
 	Button button2;
+	  //prepara botões de aposta
     groups.setLayout(new GridLayout(2,0));
     for(int j=1;j<=2;j++)
     {
@@ -93,12 +98,14 @@ public class Roleta extends JFrame {
 	cabecalho.bet.addMouseListener(new MouseAdapter() { 
     public void mouseClicked(MouseEvent e)
     {
+	    //botão de aposta, apenas activo se houver saldo, aposta e um botão selecionado
       if(player.getSaldo() > 0 && player.getBet() > 0 && Button.getKind()!=-1)
 		  {
           new Sound("./sounds/rou.wav");
         player.setOdds(Button.getBettingmult(Button.getKind()));
   			player.setSaldo(player.getSaldo()-player.getBet());
   			cabecalho.saldo.setText("Saldo:"+player.getSaldo()+"$");
+			  //tira um numero à sorte.
   			Random randomno = new Random();
   			sortudo=randomno.nextInt(37);
   			numerosort.Bolarodando(sortudo);
@@ -137,6 +144,7 @@ public class Roleta extends JFrame {
     userstatus.add(musica);
     userstatus.add(rodar);
   }
+  // método que converte numero random em numero da roda da roleta e retorna 1 se o utilizador ganhar a aposta
   public int convertesorte(int rand)
   {
     int a=-1,coluna=0,cor=-1;
